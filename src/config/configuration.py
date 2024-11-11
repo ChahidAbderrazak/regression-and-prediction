@@ -97,7 +97,7 @@ class ConfigurationManager:
             all_params=params,
             metric_file_name=config.metric_file_name,
             target_column=schema.name,
-            mlflow_uri="localhost:5000",
+            mlflow_uri="https://dagshub.com/ChahidAbderrazak/mlflow-zak",
         )
 
         return model_evaluation_config
