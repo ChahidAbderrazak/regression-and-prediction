@@ -8,12 +8,12 @@ echo && echo "[${PROJECT_NAME}][IP Adresses] Getting the IP adresses of the diff
 # docker inspect -f '{{.Name}} - {{.NetworkSettings.IPv4Address }}' $(docker ps -aq) > .env-ip
 
 ##! for docker-compsoe
-sudo docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) > .env-ip
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) > .env-ip
 
 sed -i 's/ - /=/g' .env-ip
 sed -i 's|/||g' .env-ip
 # sed -i '/=$/d' .env-ip
-# cat .env-ip
+cat .env-ip
 . .env-ip
 
 #### -----------------------   OPEN RUNNING SERVERS  -------------------------------

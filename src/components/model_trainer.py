@@ -5,7 +5,6 @@ import pandas as pd
 from sklearn.linear_model import ElasticNet
 
 from entity.config_entity import ModelTrainerConfig
-from utils import logger
 
 
 class ModelTrainer:
@@ -24,6 +23,7 @@ class ModelTrainer:
         lr = ElasticNet(
             alpha=self.config.alpha,
             l1_ratio=self.config.l1_ratio,
+            max_iter=self.config.max_iter,
             random_state=42,
         )
         lr.fit(train_x, train_y)

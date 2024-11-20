@@ -1,10 +1,26 @@
-# FROM python:3.8-slim-buster
-FROM python:3.6
+ARG PYTHON_VERSION=python:3.8
+ARG OPENJDK_VERSION=openjdk:8-slim-buster
+ARG APP_SERVER_PORT=8080
+# python
+FROM $PYTHON_VERSION AS py3
+ENV PYTHONUNBUFFERED 1
 
-RUN apt update -y && apt install awscli -y
+# java
+FROM $OPENJDK_VERSION
+COPY --from=py3 / /
+
+# copy the code files
 WORKDIR /app
+COPY src /app/src
+COPY webapp /app/webapp
+COPY config /app/config
+COPY requirements.txt .
+COPY setup.py .
+COPY README.md .
 
-COPY . /app
-RUN pip install -r requirements.txt
+# Build the environnement
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-CMD ["python3", "app.py"]
+EXPOSE $APP_SERVER_PORT
+CMD ["python", "main.py"]

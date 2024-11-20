@@ -1,13 +1,12 @@
 ######## MLFLOW / SQL data packages
 mlflow==2.2.2
-# catboost>=0.26
-# boto3==1.17.90
-# python-dotenv==0.17.1
+catboost>=0.26
+boto3==1.17.90
+python-dotenv==0.17.1
 
 ############ Deep learning packages
 # tensorflow
 scikit-learn
-python-box==6.0.2
 
 # ######### Image processing  packages
 # # opencv-python
@@ -48,6 +47,3 @@ joblib
 
 ## setup the project packages
 -e .
-
-
-

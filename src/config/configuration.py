@@ -8,6 +8,9 @@ from entity.config_entity import (
 )
 from utils.common import create_directories, read_yaml
 
+from utils import mlflow_utils
+MLFLOW_URI = mlflow_utils.setup_mlflow()
+
 
 class ConfigurationManager:
     def __init__(
@@ -78,6 +81,7 @@ class ConfigurationManager:
             model_name=config.model_name,
             alpha=params.alpha,
             l1_ratio=params.l1_ratio,
+            max_iter=params.max_iter,
             target_column=schema.name,
         )
 
@@ -97,7 +101,7 @@ class ConfigurationManager:
             all_params=params,
             metric_file_name=config.metric_file_name,
             target_column=schema.name,
-            mlflow_uri="https://dagshub.com/ChahidAbderrazak/mlflow-zak",
+            mlflow_uri=MLFLOW_URI,
         )
 
         return model_evaluation_config

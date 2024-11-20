@@ -1,8 +1,8 @@
 #!/bin/bash
 clear
 echo && echo " #################################################" 
-echo " ##          OBJECT DETECTION PROJECT           " 
-echo " ##              [TENSORBOARD]           " 
+echo " ##         REGRESSION PROJECT           " 
+echo " ##             [TENSORBOARD]           " 
 echo " #################################################" && echo 
 
 #--------------------------------------------------------

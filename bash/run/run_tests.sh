@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo && echo " #################################################" 
-echo " ##          OBJECT DETECTION PROJECT           " 
+echo " ##         REGRESSION PROJECT           " 
 echo " ## Run code tests "
 echo " #################################################" && echo 
 pip install pytest-cov
@@ -9,7 +9,7 @@ clear
 
 #--------------------------------------------------------
 echo && echo " -> measure  tests coverage report"
-pytest --cov=src/lib tests/ --verbose --durations=5 -vv
+pytest --cov=src/ tests/ --verbose --durations=5 -vv --cov-report term-missing --cov-fail-under 60 
 
 
 #### ----------------   NOTIFICATION MESSAGE -------------------------

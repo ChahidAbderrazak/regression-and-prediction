@@ -8,12 +8,12 @@ command="bash "
 
 # get the name of the project docker image 
 DOCKER_IMG="datascience:v1"
-sudo docker system prune -f
+docker system prune -f
 
 #### -----------------------   RUNNING THE PROJECT DOCKER  -------------------------------
 # run the the project container(s)
 echo && echo "[${PROJECT_NAME}][Docker][dev] running the development container(s)..."
-sudo docker run -it --rm \
+docker run -it --rm \
                 --network host \
                 -e DISPLAY=$DISPLAY \
                 -v /tmp/.X11-unix/:/tmp/.X11-unix \
@@ -30,4 +30,4 @@ sudo docker run -it --rm \
 
 
 # show all running dockers 
-sudo docker ps
+docker ps
