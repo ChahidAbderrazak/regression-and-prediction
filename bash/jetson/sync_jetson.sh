@@ -11,8 +11,8 @@ echo " ##########################################################" && echo
 echo && echo  " ---> Sending [${project_folder}] files to the Jetson..." 
 rsync -azP ../$project_folder jetson@10.0.0.163:/home/jetson/mlcodes/   
 
-# echo && echo  " ---> Receiveing [${project_folder}] files from the Jetson..." 
-# rsync -azP ../$project_folder  jetson@10.0.0.163:/home/jetson/mlcodes/   
+echo && echo  " ---> Receiveing [${project_folder}] files from the Jetson..." 
+rsync -azP ../$project_folder  jetson@10.0.0.163:/home/jetson/mlcodes/   
 
 
 # 
