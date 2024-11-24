@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=python:3.8
+ARG PYTHON_VERSION=python:3.12
 ARG OPENJDK_VERSION=openjdk:8-slim-buster
 ARG APP_SERVER_PORT=8080
 # python
@@ -21,6 +21,9 @@ COPY README.md .
 # Build the environnement
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# TODO; rechck the is package for th model architechutre plot
+RUN apt install graphviz
 
 EXPOSE $APP_SERVER_PORT
 CMD ["python", "main.py"]

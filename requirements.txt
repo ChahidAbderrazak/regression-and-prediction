@@ -1,12 +1,15 @@
 ######## MLFLOW / SQL data packages
-mlflow==2.2.2
+mlflow>=2.2.2
 catboost>=0.26
-boto3==1.17.90
-python-dotenv==0.17.1
+boto3>=1.17.90
+python-dotenv>=0.17.1
 
 ############ Deep learning packages
-# tensorflow
+tensorflow>=2.16.1
 scikit-learn
+
+### Fine-Tuning
+keras_tuner
 
 # ######### Image processing  packages
 # # opencv-python
@@ -14,7 +17,7 @@ scikit-learn
 # scikit-image
 
 # ######### Visualization packages
-# seaborn
+seaborn
 # plotly 
 
 # # ######## Web API packages
