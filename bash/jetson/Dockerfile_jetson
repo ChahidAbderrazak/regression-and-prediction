@@ -1,0 +1,32 @@
+ARG JETSON_IMAGE=nvcr.io/nvidia/l4t-ml:r32.5.0-py3
+ARG OPENJDK_VERSION=openjdk:8-slim-buster
+ARG APP_SERVER_PORT=8080
+
+FROM nvcr.io/nvidia/l4t-ml:r32.5.0-py3
+# # python
+# FROM $JETSON_IMAGE AS jetson
+# ENV PYTHONUNBUFFERED 1
+
+# # java
+# FROM $OPENJDK_VERSION
+# COPY --from=jetson / /
+
+# install system  packages
+RUN apt-get update 
+RUN apt-get upgrade -y
+
+# copy the code files
+WORKDIR /app
+COPY src /app/src
+# COPY webapp /app/webapp
+COPY config /app/config
+COPY bash/jetson/requirements.txt .
+COPY setup.py .
+COPY README.md .
+
+# Build the environnement
+RUN pip3 install --upgrade pip
+RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
+
+EXPOSE $APP_SERVER_PORT
+CMD ["python", "main.py"]

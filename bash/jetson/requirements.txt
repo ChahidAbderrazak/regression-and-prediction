@@ -1,0 +1,47 @@
+# ######## MLFLOW / SQL data packages
+mlflow
+# catboost
+# boto3
+# python-dotenv
+
+############ Deep learning packages
+# tensorflow
+scikit-learn
+
+# ######### Image processing  packages
+# # opencv-python
+# # opencv-python-headless==4.5.3.56
+# scikit-image
+
+# ######### Visualization packages
+# seaborn
+# plotly 
+
+# ######## Web API packages
+# fastapi 
+# uvicorn
+# Jinja2
+# python-multipart
+
+# ##### MySQL packages
+# mysql-connector-python  # MySQL
+# psycopg2 # PostgreSQLs
+
+##### development
+jupyterlab
+pytest
+flake8
+black
+
+##### General packages
+# matplotlib
+# numpy
+# pandas
+# tqdm
+# glob2
+# # types-PyYAML
+# joblib
+
+
+# ## setup the project packages
+# -e .
