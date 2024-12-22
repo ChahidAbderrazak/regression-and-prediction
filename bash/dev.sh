@@ -1,9 +1,9 @@
-#/bin/bash
+#!/bin/bash
 . .env
 command="bash "
 # command="python src/webapp.py "
 # command="python src/main.py "
-# command="jupyter lab --allow-root --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token='' --NotebookApp.password='' "
+command="jupyter lab --allow-root --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token='' --NotebookApp.password='' "
 
 
 # get the name of the project docker image 

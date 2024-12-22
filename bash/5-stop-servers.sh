@@ -1,10 +1,10 @@
-#/bin/bash
+#!/bin/bash
 . .env
 # get the name of the project docker image 
 DOCKER_IMG="${IMG_BUILDER}:${VERSION}"
 
 echo && echo "[${PROJECT_NAME}][Docker-Compose] Stopping all container(s)..."
-docker-compose -p "${PROJECT_NAME}" -f docker-compose.yml stop
+docker compose -p "${PROJECT_NAME}" -f docker-compose.yml stop
 
 echo && echo "[${PROJECT_NAME}][Docker] Stopping all related container(s)..."
 
